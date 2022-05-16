@@ -1,1 +1,50 @@
 @charset "utf-8";
+
+*, *::before, *::after
+/*全部套用*/
+    {
+    box-sizing: border-box;
+}
+.mask{/*設定可視範圍取消卷軸*/
+    overflow:hidden;
+}
+.slide {/*設定可視範圍取消卷軸*/
+    width: 100vw;
+    height: 100vh;
+}
+.nav {
+    position: fixed;
+    right: 15px;
+    top: 50%;
+}
+.slide-ls {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300vw;
+}
+.slide-item {
+    /* 設定區間範圍 */
+    padding: 3rem 5rem;
+    width: 100vw;
+    /*vw可視範圍寬度*/
+    height: 100vh;
+    /*vh可視範圍高度*/
+}
+.slide-item-pdf {
+    background-color: #333;
+}
+.slide-item-pr {
+    background-color: #dd1f8e;
+}
+.slide-item-ps {
+    background-color: #00a7e2;
+}
+.slide-item-ae {
+    background-color: #620294;
+}
+.slide-item-ai {
+    background-color: #ee9a10;
+}
+.slide-item-dw {
+    background-color: #84c922;
+}
