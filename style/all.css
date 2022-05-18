@@ -1,27 +1,58 @@
 @charset "utf-8";
 
-*, *::before, *::after
-/*全部套用*/
-    {
+/*base-基本設定*/
+/*全部套用--------------------------------------------------------------*/
+*, *::before, *::after {
     box-sizing: border-box;
 }
-.mask{/*設定可視範圍取消卷軸*/
-    overflow:hidden;
+
+body {
+    /*字體設定*/
+    font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
 }
-.slide {/*設定可視範圍取消卷軸*/
+
+img {
+    vertical-align: bottom;
+}
+
+/*helper-工具(重複利用)--------------------------------------------------*/
+.mask {
+    /*設定可視範圍取消卷軸*/
+    overflow: hidden;
+}
+
+.img-resp {
+    max-width: 100%;
+    height: auto;
+}
+
+.row{
+    margin-left: -12px;
+    height: auto;
+}
+/*Layout-主區域更改------------------------------------------------------*/
+.nav {
+    position: fixed;
+    right: 2%;
+    top: 50%;
+    margin-top: -100px;
+    /*按鈕調整*/
+}
+
+.slide {
+    /*設定可視範圍取消卷軸*/
     width: 100vw;
     height: 100vh;
 }
-.nav {
-    position: fixed;
-    right: 15px;
-    top: 50%;
-}
+
+/*各部位功能-------------------------------------------------------------*/
+
 .slide-ls {
     display: flex;
     flex-wrap: wrap;
     width: 300vw;
 }
+
 .slide-item {
     /* 設定區間範圍 */
     padding: 3rem 5rem;
@@ -30,21 +61,135 @@
     height: 100vh;
     /*vh可視範圍高度*/
 }
+
 .slide-item-pdf {
     background-color: #333;
 }
+
 .slide-item-pr {
     background-color: #dd1f8e;
 }
+
 .slide-item-ps {
     background-color: #00a7e2;
 }
+
 .slide-item-ae {
     background-color: #620294;
 }
+
 .slide-item-ai {
     background-color: #ee9a10;
 }
+
 .slide-item-dw {
     background-color: #84c922;
+}
+
+.pd-tit {
+    /*標題字更改*/
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.pd-intro {
+    width: 50%;
+}
+
+.pd-desc {
+    /*段落顏色*/
+    color: #FFF;
+    line-height: 1.7;
+    /* margin: 1rem 0; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    /*文字對齊*/
+}
+
+.pd-ls {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.pd-item {
+    width: 33.33333%;
+    padding: 12px;
+}
+
+.nav-btn {
+    /*按鈕設定*/
+    background-color: rgba(255, 255, 255, .3);
+    border: none;
+    width: 15px;
+    height: 15px;
+    text-indent: -9999px;
+    /*數字隱藏*/
+    display: block;
+    margin: 15px;
+    /*上下左右加15像素*/
+    cursor: pointer
+}
+
+.nav-btn:hover {
+    /*手指滑入*/
+    background-color: #FFF;
+}
+
+/* modules覆蓋------------------------------ */
+.hover-overlay , .hover-icon/*icon單獨使用加到這裡*/ {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-overlay::after {
+    content: "";
+    /* display: block; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+}
+
+.hover-overlay:hover:after {
+    opacity: .5;
+    /*透明度更改*/
+}
+
+/* modules圖標------------------------------ */
+.hover-icon i {
+    /*針對icon*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    font-size: 2em;
+    z-index: 1;
+    color: #FFF;
+    transform: scale(0);/*縮小*/
+}
+
+.hover-icon:hover i {/*滑鼠滑入顯示icon*/
+    transform: scale(1);/*顯示*/
+}
+/* modules影像------------------------------ */
+.hover-scale{
+    overflow: hidden;
+    /* display: inline-block; 單獨使用再轉區塊預設為行內 */
+}
+.hover-scale:hover > img {/*針對圖像做縮放*/
+    transform: scale(1.2);
+}
+/* modules轉場------------------------------ */
+.hover-transition::after,
+.hover-transition i,
+.hover-transition >img {/*針對裡面圖片*/
+    transition-duration: .5s;/*動畫時間調整*/
 }
