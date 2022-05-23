@@ -26,10 +26,13 @@ img {
     height: auto;
 }
 
-.row{
+.row {
+    /*左右各家12*/
     margin-left: -12px;
-    height: auto;
+    margin-right: -12px;
+
 }
+
 /*Layout-主區域更改------------------------------------------------------*/
 .nav {
     position: fixed;
@@ -37,6 +40,8 @@ img {
     top: 50%;
     margin-top: -100px;
     /*按鈕調整*/
+    z-index: 1;
+    /*按鈕深度*/
 }
 
 .slide {
@@ -60,6 +65,8 @@ img {
     /*vw可視範圍寬度*/
     height: 100vh;
     /*vh可視範圍高度*/
+    overflow: auto;
+    /*針對圖片多自動顯示卷軸*/
 }
 
 .slide-item-pdf {
@@ -86,6 +93,10 @@ img {
     background-color: #84c922;
 }
 
+.pd {
+    width: 50%;
+}
+
 .pd-tit {
     /*標題字更改*/
     color: #FFF;
@@ -95,7 +106,7 @@ img {
 }
 
 .pd-intro {
-    width: 50%;
+    /* width: 50%; */
 }
 
 .pd-desc {
@@ -112,12 +123,20 @@ img {
 .pd-ls {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .pd-item {
     width: 33.33333%;
     padding: 12px;
+}
+
+.pd-item>a {
+    /*針對圖倒影調整*/
+    -webkit-box-reflect: below -1px linear-gradient(to top, rgba(0, 0, 0, .3)0,
+            transparent 50%
+            /*倒影顯示範圍*/
+        )
 }
 
 .nav-btn {
@@ -140,7 +159,10 @@ img {
 }
 
 /* modules覆蓋------------------------------ */
-.hover-overlay , .hover-icon/*icon單獨使用加到這裡*/ {
+.hover-overlay, .hover-icon
+
+/*icon單獨使用加到這裡*/
+    {
     position: relative;
     display: inline-block;
 }
@@ -173,23 +195,80 @@ img {
     font-size: 2em;
     z-index: 1;
     color: #FFF;
-    transform: scale(0);/*縮小*/
+    transform: scale(0);
+    /*縮小*/
 }
 
-.hover-icon:hover i {/*滑鼠滑入顯示icon*/
-    transform: scale(1);/*顯示*/
+.hover-icon:hover i {
+    /*滑鼠滑入顯示icon*/
+    transform: scale(1);
+    /*顯示*/
 }
+
 /* modules影像------------------------------ */
-.hover-scale{
+.hover-scale {
     overflow: hidden;
     /* display: inline-block; 單獨使用再轉區塊預設為行內 */
 }
-.hover-scale:hover > img {/*針對圖像做縮放*/
+
+.hover-scale:hover>img {
+    /*針對圖像做縮放*/
     transform: scale(1.2);
 }
+
 /* modules轉場------------------------------ */
 .hover-transition::after,
 .hover-transition i,
-.hover-transition >img {/*針對裡面圖片*/
-    transition-duration: .5s;/*動畫時間調整*/
+.hover-transition>img {
+    /*針對裡面圖片*/
+    transition-duration: .5s;
+    /*動畫時間調整*/
+}
+/*State-------------------------------------*/
+.js-nav {
+    background-color: rgba(0, 0, 0, .7);
+}
+.js-nav-btn {
+    background-color: #FFF;
+
+}
+/*RWD手機畫面-----*/
+@media screen and (max-width:1024px) {
+
+    /*針對手機視窗減少留白空間*/
+    .pd {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav {
+        top: 0;
+        left: 0;
+        right: auto;
+        margin-top: 0;
+        display: flex;
+        /*水平*/
+        justify-content: center;
+        /*分散對其*/
+        width: 100%;
+    }
+
+    .slide-item {
+        /*設定手機版內距*/
+        padding: 4rem 2rem 2rem;
+    }
+
+    .pd {
+        width: auto;
+    }
+
+    .pd-head {
+        /*文字內距*/
+        text-align: center;
+    }
+
+    .pd-item {
+        width: 50%;
+    }
 }
