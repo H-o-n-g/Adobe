@@ -18,20 +18,21 @@
         integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./style/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <div class="mask slide">
         <nav class="nav" id="Nav">
-            <input class="nav-btn" id="Btb1" type="button" value="1">
-            <input class="nav-btn" id="Btb2" type="button" value="2">
-            <input class="nav-btn" id="Btb3" type="button" value="3">
-            <input class="nav-btn" id="Btb4" type="button" value="4">
-            <input class="nav-btn" id="Btb5" type="button" value="5">
-            <input class="nav-btn" id="Btb6" type="button" value="6">
+            <input class="nav-btn" id="Btn1" type="button" value="1">
+            <input class="nav-btn" id="Btn2" type="button" value="2">
+            <input class="nav-btn" id="Btn3" type="button" value="3">
+            <input class="nav-btn" id="Btn4" type="button" value="4">
+            <input class="nav-btn" id="Btn5" type="button" value="5">
+            <input class="nav-btn" id="Btn6" type="button" value="6">
         </nav>
-        <div class="slide-ls" id="SlideLs" style="position: relative; left: -200%">
+        <div class="slide-ls" id="SlideLs" >
             <!-- 第一組 -->
             <section class="slide-item slide-item-pdf">
                 <div class="pd">
@@ -46,19 +47,27 @@
                     </article>
                     <ul class="pd-ls row">
 						<li class="pd-item">
-							<a class="hover-overlay hover-icon hover-scale hover-transition" href="./images/pdf_1_lg.png"><!--第一張-->
+							<a  
+                                class="hover-overlay hover-icon hover-scale hover-transition" 
+                                href="./images/pdf_1_lg.png"
+                                data-caption= "是現今多裝置世界中最完整的 PDF 解決方案。"
+                                ><!--第一張-->
 								<img class="img-resp" src="./images/pdf_1_sm.png" alt="PDF1" width="250" height="141">
 								<i class="fas fa-search-plus"></i>
 							</a>
 						</li>
 						<li class="pd-item">
-							<a class="hover-overlay hover-icon hover-scale hover-transition" href="./images/pdf_2_lg.png"><!--第二張-->
+							<a class="hover-overlay hover-icon hover-scale hover-transition" href="./images/pdf_2_lg.png"
+                            data-caption= "使用桌上型電腦及行動裝置，與創意團隊、客戶和廣告代理商安全地協作。"
+                            ><!--第二張-->
 								<img class="img-resp" src="./images/pdf_2_sm.png" alt="PDF2" width="250" height="141">
 								<i class="fas fa-search-plus"></i>
 							</a>
 						</li>
 						<li class="pd-item">
-							<a class="hover-overlay hover-icon hover-scale hover-transition" href="./images/pdf_3_lg.png"><!--第三張-->
+							<a class="hover-overlay hover-icon hover-scale hover-transition" href="./images/pdf_3_lg.png"
+                                data-caption= "您可以將 InDesign 或 Illustrator 檔案轉換成PDF"  
+                            ><!--第三張-->
 								<img class="img-resp" src="./images/pdf_3_sm.png" alt="PDF3" width="250" height="141">
 								<i class="fas fa-search-plus"></i>
 							</a>
@@ -86,13 +95,14 @@
                     </article>
                     <ul class="pd-ls row">
 						<li class="pd-item">
-							<a class="hover-icon hover-transition" href="./images/pdf_1_lg.png">
+							<a class="hover-icon hover-transition" href="https://youtu.be/-xqTn9Zxa7w"
+                            data-caption= "使用桌上型電腦及行動裝置，與創意團隊、客戶和廣告代理商安全地協作。">
 								<img class="img-resp" src="./images/pr_1_sm.png" alt="PDF1" width="250" height="141">
 								<i class="fas fa-play"></i>
 							</a>
 						</li>
 						<li class="pd-item">
-							<a class="hover-icon hover-transition" href="./images/pdf_2_lg.png">
+							<a class="hover-icon hover-transition" href="https://youtu.be/UTKS3UKUCUs">
 								<img class="img-resp" src="./images/pr_2_sm.png" alt="PDF1" width="250" height="141">
 								<i class="fas fa-play"></i>
 							</a>
@@ -113,17 +123,30 @@
                     </article>
 					<ul class="pd-ls row">
 						<li class="pd-item">
-							<a class="hover-overlay hover-scale hover-transition" href="./images/pdf_1_lg.png">
+							<a  class="hover-overlay hover-scale hover-transition" 
+                                href="javascrupt"
+                                data-type="iframe"
+                                data-src="https://blog.adobe.com/" 
+                                >
 								<img class="img-resp" src="./images/ps_1_sm.png" alt="PDF1" width="250" height="141">
 							</a>
 						</li>
 						<li class="pd-item">
-							<a class="hover-overlay hover-scale hover-transition" href="./images/pdf_2_lg.png">
+							<a class="hover-overlay hover-scale hover-transition" 
+                                href="javascrupt"
+                                data-type="iframe" 
+                                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28918.62477028556!2d121.50815994136521!3d25.039907251818697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a973107749ad%3A0x3eca9af750aa028!2z6LWr57a16Zu76IWm6Kit6KiI5Z-56KiT5a246ZmiLeermeWJjeWtuOmZog!5e0!3m2!1szh-TW!2stw!4v1653480512541!5m2!1szh-TW!2stw"
+                                >
 								<img class="img-resp" src="./images/ps_2_sm.png" alt="PDF1" width="250" height="141">
 							</a>
 						</li>
 						<li class="pd-item">
-							<a class="hover-overlay hover-scale hover-transition" href="./images/pdf_2_lg.png">
+							<a  class="hover-overlay hover-scale hover-transition" 
+                                href="./images/pdf_2_lg.png"
+                                href="javascrupt"
+                                data-type="iframe"
+								data-src="https://cdn2.hubspot.net/hub/53/file-13204607-pdf/docs/introduction-to-seo-ebook.pdf"
+							>
 								<img class="img-resp" src="./images/ps_3_sm.png" alt="PDF1" width="250" height="141">
 							</a>
 						</li>
@@ -172,6 +195,7 @@
     </div>
     <!--引入網站上的js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./js/index.js"></script><!--引入自己的js-->>
 </body>
 
