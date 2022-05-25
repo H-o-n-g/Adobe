@@ -87,4 +87,17 @@ $('#Btn6').click(function () {
   })
 });
 
-$(".pd-item > a").fancybox();/**/
+$(".pd-item > a").fancybox({
+  protect: false,/*鎖右鍵 */
+  loop: true,/*循環 */
+  animaitonDuration:500,/*動畫時間 */
+  transitonDuration:1000,/*轉場時間 */
+  transitionEffect: "circular",/*轉場效果*/
+  slideShow :{
+    autoStart:true,sprrd:3000
+  }/*幻燈片*/
+
+
+
+
+});/**/
